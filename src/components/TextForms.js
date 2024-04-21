@@ -72,7 +72,7 @@ export default function TextForms(props) {
         </>
     )
 }
-
+//comment
 TextForms.defaultProps = {
     up: "UPPER CASE",
     lo: "lower case",

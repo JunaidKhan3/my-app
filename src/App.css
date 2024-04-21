@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.my-custom-margin{
+  margin-left: 10px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}

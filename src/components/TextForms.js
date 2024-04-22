@@ -49,7 +49,7 @@ export default function TextForms(props) {
     return (
         <>
             <div className='container' style={{ color: props.mode === 'dark' ? 'light' : 'white' }}>
-                <h2>{props.heading}</h2>
+                <h2 style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>{props.heading}</h2>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={onChangeHandler} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
                         id="myBox" rows="8"></textarea>
@@ -68,7 +68,7 @@ export default function TextForms(props) {
                 <p>{text.split(" ").length} words {text.length} characters</p>
                 <p> time taken to read all text {0.008 * text.split(" ").length} Minutes </p>
                 <h3>Privew</h3>
-                <p>{text}</p>
+                <p>{text.length > 0 ? text : 'enter a text in a box to preview here'}</p>
             </div>
         </>
     )

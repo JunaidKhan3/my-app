@@ -48,10 +48,11 @@ export default function TextForms(props) {
 
     return (
         <>
-            <div className='container'>
+            <div className='container' style={{ color: props.mode === 'dark' ? 'light' : 'white' }}>
                 <h2>{props.heading}</h2>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} onChange={onChangeHandler} id="myBox" rows="8"></textarea>
+                    <textarea className="form-control" value={text} onChange={onChangeHandler} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+                        id="myBox" rows="8"></textarea>
                 </div>
                 <button className="button btn btn-primary mx-1" onClick={handleUpClick} >{props.up}</button>
                 <button className="button btn btn-primary mx-1" onClick={handleLoClick} >{props.lo}</button>
@@ -62,7 +63,7 @@ export default function TextForms(props) {
                 <button className="button btn btn-primary mx-1" onClick={handleClrClick} >{props.clr}</button>
             </div>
 
-            <div className='container my-3'>
+            <div className='container my-3' style={{ color: props.mode === 'dark' ? 'light' : 'white' }}>
                 <h2>Text Summary</h2>
                 <p>{text.split(" ").length} words {text.length} characters</p>
                 <p> time taken to read all text {0.008 * text.split(" ").length} Minutes </p>
@@ -80,6 +81,6 @@ TextForms.defaultProps = {
     inverse: "iNvErSe cAsE",
     dwd: "Download Txt",
     clr: "clear",
-    extraSpc:"Extra Space"
+    extraSpc: "Extra Space"
 
 }

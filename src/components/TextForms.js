@@ -63,7 +63,7 @@ export default function TextForms(props) {
                 <button className="button btn btn-primary mx-1" onClick={handleClrClick} >{props.clr}</button>
             </div>
 
-            <div className='container my-3' style={{ color: props.mode === 'dark' ? 'light' : 'white' }}>
+            <div className='container my-3' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Text Summary</h2>
                 <p>{text.split(" ").length} words {text.length} characters</p>
                 <p> time taken to read all text {0.008 * text.split(" ").length} Minutes </p>

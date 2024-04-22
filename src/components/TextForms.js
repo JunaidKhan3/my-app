@@ -4,7 +4,8 @@ export default function TextForms(props) {
     const [text, setText] = useState('');
     const handleLoClick = () => {
         let newText = text.toLowerCase();
-        setText(newText);
+        setText(newText)
+        props.showAlert("Converted into Lower Case", "success");
     }
     const handleTitleClick = () => {
         let words = text.split(" ");
@@ -12,10 +13,12 @@ export default function TextForms(props) {
             return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
         }).join(" ");
         setText(newText);
+        props.showAlert("Converted into Title", "success");
     }
     const handleInverseClick = () => {
         let newText = text.split('').reverse().join('');
-        setText(newText);
+        setText(newText)
+        props.showAlert("Converted into Inverse Case", "success");
     }
     const handleDownloadClick = () => {
         const blob = new Blob([text], { type: 'text/plain' });
@@ -27,24 +30,27 @@ export default function TextForms(props) {
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
+        props.showAlert("Downloaded", "success");
     }
     const handleExtraSpacesClick = () => {
         let newText = text.split(/[ ]+/)
         setText(newText.join(' '));
+        props.showAlert("ExtraSpaces done", "success");
     }
     const handleClrClick = () => {
         let newText = '';
-        setText(newText);
+        setText(newText)
+        props.showAlert("Cleared", "success");
     }
     const handleUpClick = () => {
         let newText = text.toUpperCase();
-        setText(newText);
+        setText(newText)
+        props.showAlert("Converted to Upper Case", "success");
     }
     const onChangeHandler = (event) => {
         console.log("onChangeHandler  is running");
-        setText(event.target.value)
+        setText(event.target.value);
     }
-
 
     return (
         <>
@@ -65,7 +71,7 @@ export default function TextForms(props) {
 
             <div className='container my-3' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Text Summary</h2>
-                <p>{text.split(" ").length} words {text.length} characters</p>
+                <p>{text.length === 0 ? '0 words' : `${text.trim().split(/\s+/).length}`} words {text.length} characters</p>
                 <p> time taken to read all text {0.008 * text.split(" ").length} Minutes </p>
                 <h3>Privew</h3>
                 <p>{text.length > 0 ? text : 'enter a text in a box to preview here'}</p>

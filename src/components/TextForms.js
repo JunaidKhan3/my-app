@@ -60,13 +60,13 @@ export default function TextForms(props) {
                     <textarea className="form-control" value={text} onChange={onChangeHandler} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
                         id="myBox" rows="8"></textarea>
                 </div>
-                <button className="button btn btn-primary mx-1" onClick={handleUpClick} >{props.up}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleLoClick} >{props.lo}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleTitleClick} >{props.titleCase}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleInverseClick} >{props.inverse}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleDownloadClick} >{props.dwd}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleExtraSpacesClick} >{props.extraSpc}</button>
-                <button className="button btn btn-primary mx-1" onClick={handleClrClick} >{props.clr}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleUpClick} >{props.up}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleLoClick} >{props.lo}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleTitleClick} >{props.titleCase}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleInverseClick} >{props.inverse}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleDownloadClick} >{props.dwd}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleExtraSpacesClick} >{props.extraSpc}</button>
+                <button className="button btn btn-primary mx-1 my-1" onClick={handleClrClick} >{props.clr}</button>
             </div>
 
             <div className='container my-3' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
